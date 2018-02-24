@@ -1,6 +1,13 @@
-client/.expo
+.expo
 
-# Created by https://www.gitignore.io/api/vim,node,linux,emacs,macos,python,windows,sublimetext,reactnative
+# Created by https://www.gitignore.io/api/vim,node,linux,emacs,macos,python,windows,sublimetext,reactnative,code
+
+### Code ###
+# Visual Studio Code - https://code.visualstudio.com/
+.settings/
+.vscode/
+tsconfig.json
+jsconfig.json
 
 ### Emacs ###
 # -*- mode: gitignore; -*-
@@ -488,4 +495,4 @@ $RECYCLE.BIN/
 *.lnk
 
 
-# End of https://www.gitignore.io/api/vim,node,linux,emacs,macos,python,windows,sublimetext,reactnative
+# End of https://www.gitignore.io/api/vim,node,linux,emacs,macos,python,windows,sublimetext,reactnative,code
