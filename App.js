@@ -20,7 +20,7 @@ export default class App extends React.Component<State> {
 
   renderNotSet() {
     return (
-      <React.Fragment>
+      <View className={styles.container}>
         <Text>CHOOSE YOUR PAIN</Text>
         <Button
           onPress={() => this.setState({ modeSet: true, isDing: true })}
@@ -30,7 +30,7 @@ export default class App extends React.Component<State> {
           onPress={() => this.setState({ modeSet: true, isDing: false })}
           title="Dong"
         />
-      </React.Fragment>
+      </View>
     );
   }
 
@@ -39,11 +39,7 @@ export default class App extends React.Component<State> {
   }
 
   render() {
-    return (
-      <View style={styles.container}>
-        {this.state.modeSet ? this.renderDingDong() : this.renderNotSet()}
-      </View>
-    );
+    return this.state.modeSet ? this.renderDingDong() : this.renderNotSet();
   }
 }
 

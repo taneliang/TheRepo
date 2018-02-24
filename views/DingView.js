@@ -1,28 +1,17 @@
 // @flow
 
 import React, { Component } from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StackNavigator } from "react-navigation";
+// import { StyleSheet, View, Text } from "react-native";
+import SendView from "./SendView";
+import ReceiptView from "./ReceiptView";
 
-type State = {
-  modeSet: boolean,
-  isDing: ?boolean
-};
-
-export default class DingView extends Component {
-  render() {
-    return (
-      <View className={styles.container}>
-        <Text>DINGVIEW</Text>
-      </View>
-    );
+export default StackNavigator(
+  {
+    Send: { screen: SendView },
+    Receipt: { screen: ReceiptView }
+  },
+  {
+    initialRouteName: "Send"
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
+);
