@@ -1,7 +1,9 @@
 // @flow
 
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
+import DingView from "./views/DingView";
+import DongView from "./views/DongView";
 
 type State = {
   modeSet: boolean,
@@ -18,25 +20,30 @@ export default class App extends React.Component<State> {
 
   renderNotSet() {
     return (
-      <View style={styles.container}>
-        <Text>Not set</Text>
-      </View>
+      <React.Fragment>
+        <Text>CHOOSE YOUR PAIN</Text>
+        <Button
+          onPress={() => this.setState({ modeSet: true, isDing: true })}
+          title="Ding"
+        />
+        <Button
+          onPress={() => this.setState({ modeSet: true, isDing: false })}
+          title="Dong"
+        />
+      </React.Fragment>
     );
   }
 
   renderDingDong() {
-    return (
-      <View style={styles.container}>
-        <Text>Ha set</Text>
-      </View>
-    );
+    return this.state.isDing ? <DingView /> : <DongView />;
   }
 
   render() {
-    if (this.state.modeSet) {
-      return this.renderDingDong();
-    }
-    return this.renderNotSet();
+    return (
+      <View style={styles.container}>
+        {this.state.modeSet ? this.renderDingDong() : this.renderNotSet()}
+      </View>
+    );
   }
 }
 
