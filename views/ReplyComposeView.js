@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { RkTextInput, RkButton } from "react-native-ui-kitten";
-import ActionButton from 'react-native-action-button';
 
 export default class ReplyView extends React.Component {
   static navigationOptions = {
