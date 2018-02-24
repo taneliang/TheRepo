@@ -17,6 +17,6 @@ const RootStack = StackNavigator(
     Receipt: { screen: ReceiptView }
   },
   {
-    initialRouteName: "Receipt"
+    initialRouteName: "Send"
   }
 );

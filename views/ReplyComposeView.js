@@ -32,9 +32,4 @@ const styles = StyleSheet.create({
   button: {
     margin: 20,
   },
-  actionButtonIcon: {
-    fontSize: 20,
-    height: 22,
-    color: 'white',
-  },
 });

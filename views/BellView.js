@@ -3,7 +3,7 @@ import { StackNavigator } from 'react-navigation';
 import SendView from "./SendView";
 import ReceiptView from "./ReceiptView";
 
-export default class DongView extends React.Component {
+export default class BellView extends React.Component {
   render() {
     return (
       <RootStack />
