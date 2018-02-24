@@ -31,6 +31,7 @@ export default class App extends React.Component<State> {
           title="Dong"
         />
       </View>
+  
     );
   }
 
@@ -47,7 +48,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+    flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   }
 });

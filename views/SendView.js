@@ -1,12 +1,15 @@
 // @flow
 
 import React, { Component } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Image } from "react-native";
 
 export default class SendView extends Component {
   render() {
     return (
-      <View className={styles.container}>
+      <View style=styles.container>
+        <Image
+            source={require('../static/img/send.jpeg')}
+          />
         <Text>SendView</Text>
       </View>
     );
@@ -15,9 +18,8 @@ export default class SendView extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center"
-  }
+    justifyContent: "center",
+  },
 });
