@@ -1,28 +1,23 @@
-// @flow
-
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
-
-type State = {
-  modeSet: boolean,
-  isDing: ?boolean
-};
+import { StackNavigator } from 'react-navigation';
+import MessageView from "./MessageView";
+import ReplyView from "./ReplyView";
 
 export default class DongView extends Component {
   render() {
     return (
-      <View className={styles.container}>
-        <Text>DONGVIEW</Text>
-      </View>
+      <RootStack />
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+const RootStack = StackNavigator(
+  {
+    Message: { screen: MessageView },
+    Reply: { screen: ReplyView },
+  },
+  {
+    initialRouteName: 'Message',
   }
-});
+);
