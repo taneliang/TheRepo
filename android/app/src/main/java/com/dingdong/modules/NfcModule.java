@@ -1,6 +1,8 @@
 package com.dingdong.modules;
 
 import android.net.Uri;
+import android.nfc.NdefMessage;
+import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.util.Log;
 
@@ -25,11 +27,9 @@ public class NfcModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void broadcastFile(String fileName, Callback errorCallback, Callback successCallback) {
-        File requestFile = new File(fileName);
-        requestFile.setReadable(true, true);
-        Uri[] uris = { Uri.fromFile(requestFile) };
-        mNfcAdapter.setBeamPushUris(uris, getCurrentActivity());
-        successCallback.invoke(fileName);
+    public void broadcastText(String text, Callback errorCallback, Callback successCallback) {
+        NdefMessage msg = new NdefMessage(NdefRecord.createApplicationRecord("com.dingdong"), NdefRecord.createTextRecord("en", text));
+        mNfcAdapter.setNdefPushMessage(msg, getCurrentActivity());
+        successCallback.invoke(text);
     }
 }
