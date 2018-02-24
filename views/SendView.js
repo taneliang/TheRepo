@@ -1,15 +1,12 @@
-// @flow
-
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
+import SendImage from "../static/img/send.jpeg";
 
-export default class SendView extends Component {
+export default class SendView extends React.Component {
   render() {
     return (
-      <View style=styles.container>
-        <Image
-            source={require('../static/img/send.jpeg')}
-          />
+      <View style={styles.container}>
+        <Image source={SendImage}/>
         <Text>SendView</Text>
       </View>
     );

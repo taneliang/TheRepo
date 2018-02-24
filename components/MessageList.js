@@ -8,7 +8,6 @@ export default class MessageList extends React.Component {
       <MessageListItem
         sender={item.sender}
         message={item.message}
-        onPress={() => this.props.navigation.navigate('Reply')}
       />
     );
   }

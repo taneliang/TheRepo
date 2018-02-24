@@ -1,22 +1,26 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { RkTextInput, RkButton } from "react-native-ui-kitten";
+import MessageList from '../components/MessageList';
 
 export default class ReplyView extends React.Component {
   static navigationOptions = {
-    title: "Reply"
+    title: "Message"
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [
+        {key: '15', sender: 'NinjaVan', message: 'Lorem ipsum'},
+        {key: '16', sender: 'Anonymous', message: 'What is up nyan nyan, because What is up nyan nyan, because What is up nyan nyan'},
+      ],
+    };
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <RkTextInput rkType='' placeholder="Sender" />
-        <RkTextInput rkType='' placeholder="Message" />
-        <RkButton
-          style={styles.button}
-          rkType="stretch success">
-          Dong
-        </RkButton>
+        <MessageList data={this.state.data} />
       </View>
     );
   }
@@ -24,11 +28,7 @@ export default class ReplyView extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#ecf0f1',
     flex: 1,
-    alignItems: "center",
-    backgroundColor: '#eeeeee',
   },
-  button: {
-    margin: 20,
-  }
 });

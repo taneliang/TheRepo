@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
-import { StackNavigator } from 'react-navigation';
+import { TabNavigator } from 'react-navigation';
 import MessageView from "./MessageView";
 import ReplyView from "./ReplyView";
+import ReplyComposeView from "./ReplyComposeView";
 
 export default class DongView extends Component {
   render() {
@@ -12,10 +13,11 @@ export default class DongView extends Component {
   }
 }
 
-const RootStack = StackNavigator(
+const RootStack = TabNavigator(
   {
     Message: { screen: MessageView },
     Reply: { screen: ReplyView },
+    ReplyCompose: { screen: ReplyComposeView }
   },
   {
     initialRouteName: 'Message',
