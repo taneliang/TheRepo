@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "96334949157",
+    "firebase_url": "https://hackomania2018.firebaseio.com",
+    "project_id": "hackomania2018",
+    "storage_bucket": "hackomania2018.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96334949157:android:2fd51512a8c27a2f",
+        "android_client_info": {
+          "package_name": "com.dingdong"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "96334949157-m67h2eb08bulmn1h4q3antkr149tdpu2.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "96334949157-lm4ee11fdj17q88reombeo1dsd4vfs1d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOsyirAemg3zBwF_dsiRQwAUZgDVsU7A4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

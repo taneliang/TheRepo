@@ -18,7 +18,9 @@
     "preset": "react-native"
   },
   "dependencies": {
+    "firebase": "^4.10.1",
     "react": "^16.2.0",
-    "react-native": "^0.52.0"
+    "react-native": "^0.52.0",
+    "react-native-firebase": "^3.2.7"
   }
 }
