@@ -4,6 +4,17 @@ import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 import DingView from "./views/DingView";
 import DongView from "./views/DongView";
+import nfc from "./utils/nfc";
+
+console.log(nfc.broadcastFile(
+    "/storage/emulated/0/Downloads/Tut9.pdf", 
+    (msg) => {
+        console.log("ERROR = " + msg);
+    },
+    (result) => {
+        console.log("RESULT = " + result);
+    }
+));
 
 type State = {
   modeSet: boolean,
