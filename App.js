@@ -1,35 +1,34 @@
-// @flow
-
 import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 import DingView from "./views/DingView";
 import DongView from "./views/DongView";
+import { RkText, RkButton } from "react-native-ui-kitten";
 
-type State = {
-  modeSet: boolean,
-  isDing: ?boolean
-};
-
-export default class App extends React.Component<State> {
-  constructor(props: Object) {
+export default class App extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {
-      modeSet: false
+      isDing: false,
+      modeSet: true,
     };
   }
 
   renderNotSet() {
     return (
-      <View className={styles.container}>
-        <Text>CHOOSE YOUR PAIN</Text>
-        <Button
-          onPress={() => this.setState({ modeSet: true, isDing: true })}
-          title="Ding"
-        />
-        <Button
-          onPress={() => this.setState({ modeSet: true, isDing: false })}
-          title="Dong"
-        />
+      <View style={styles.container}>
+        <RkText rkType='xxlarge'>CHOOSE YOUR PAIN</RkText>
+        <RkButton
+          style={styles.button}
+          rkType="success"
+          onPress={() => this.setState({ modeSet: true, isDing: true })}>
+          Ding
+        </RkButton>
+        <RkButton
+          style={styles.button}
+          rkType="danger"
+          onPress={() => this.setState({ modeSet: true, isDing: false })}>
+          Dong
+        </RkButton>
       </View>
     );
   }
@@ -46,8 +45,11 @@ export default class App extends React.Component<State> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    backgroundColor: '#eeeeee',
+  },
+  button: {
+    marginTop: 10,
   }
 });
