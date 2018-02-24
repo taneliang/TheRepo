@@ -4,17 +4,30 @@ import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 import DingView from "./views/DingView";
 import DongView from "./views/DongView";
-import nfc from "./utils/nfc";
+import nfc, { addNDEFMessageReceivedListener } from "./utils/nfc";
 
-console.log(nfc.broadcastFile(
-    "/storage/emulated/0/Downloads/Tut9.pdf", 
-    (msg) => {
-        console.log("ERROR = " + msg);
+const str = (() => {
+  let derp = "";
+  for (let i = 0; i < 50000; i++) {
+    derp +=
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan scelerisque nulla in suscipit. Donec ut justo id dui tempus elementum vel sed velit. Proin mattis et ex non feugiat. Duis dapibus justo eget vehicula faucibus. Sed sed ornare quam. Cras ornare mi dolor, pulvinar";
+  }
+  return derp;
+})();
+
+console.log(
+  nfc.broadcastText(
+    str,
+    msg => {
+      console.log("ERROR = " + msg);
     },
-    (result) => {
-        console.log("RESULT = " + result);
+    result => {
+      // console.log("RESULT = " + result);
     }
-));
+  )
+);
+
+console.log("soneuh", str.length);
 
 type State = {
   modeSet: boolean,
@@ -27,6 +40,12 @@ export default class App extends React.Component<State> {
     this.state = {
       modeSet: false
     };
+  }
+
+  componentWillMount() {
+    addNDEFMessageReceivedListener(event => {
+      console.log("HA received!", event);
+    });
   }
 
   renderNotSet() {
