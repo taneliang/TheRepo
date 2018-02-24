@@ -4,6 +4,10 @@ import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 
 export default class ReceiptView extends Component {
+  static navigationOptions = {
+    title: "Delivered"
+  };
+
   render() {
     return (
       <View className={styles.container}>
